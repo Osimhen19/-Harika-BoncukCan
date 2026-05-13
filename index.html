@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kuş Bilgi Paneli</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f9ff; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 350px; overflow: hidden; border-top: 5px solid #3498db; }
+        .header { background: #3498db; color: white; padding: 20px; text-align: center; }
+        .content { padding: 20px; }
+        .info-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .label { font-weight: bold; color: #7f8c8d; font-size: 0.9em; }
+        .value { display: block; color: #2c3e50; font-size: 1.1em; margin-top: 3px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <h2 id="kus-adi">Kuş İsmi Yükleniyor...</h2>
+    </div>
+    <div class="content">
+        <div class="info-item">
+            <span class="label">🗓️ Son Güncelleme</span>
+            <span class="value" id="tarih">-</span>
+        </div>
+        <div class="info-item">
+            <span class="label">⚖️ Mevcut Kilo</span>
+            <span class="value" id="kilo">-</span>
+        </div>
+        <div class="info-item">
+            <span class="label">🍴 Favori Yem</span>
+            <span class="value" id="favori-yem">-</span>
+        </div>
+        <div class="info-item">
+            <span class="label">🎈 Ruh Hali</span>
+            <span class="value" id="mood">-</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 2. ADIM: JAVASCRIPT VERİ YÖNETİMİ
+    // Buradaki değerleri değiştirerek siteyi güncelleyebilirsin!
+    const kusVerileri = {
+        isim: "BoncukCan",
+        tarih: "13 Mayıs 2026",
+        kilo: "35 Gram",
+        favoriYem: "Kızıl Darı ve Ballı Kraker",
+        mood: "Çok Enerjik ve Konuşkan 🦜"
+    };
+
+    // Bilgileri ekrana yazdıran fonksiyon
+    function paneliGuncelle() {
+        document.getElementById('kus-adi').innerText = kusVerileri.isim;
+        document.getElementById('tarih').innerText = kusVerileri.tarih;
+        document.getElementById('kilo').innerText = kusVerileri.kilo;
+        document.getElementById('favori-yem').innerText = kusVerileri.favoriYem;
+        document.getElementById('mood').innerText = kusVerileri.mood;
+    }
+
+    // Sayfa yüklendiğinde çalıştır
+    window.onload = panelleGuncelle;
+</script>
+
+</body>
+</html>
